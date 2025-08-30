@@ -1,0 +1,122 @@
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="robotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#ff0096;stop-opacity:0.6" />
+    </linearGradient>
+    <linearGradient id="wheelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#333;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#666;stop-opacity:0.7" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Robot Body (Main Structure) -->
+  <rect x="150" y="100" width="100" height="120" rx="20" ry="20" 
+        fill="url(#robotGradient)" stroke="#00d4ff" stroke-width="2" filter="url(#glow)"/>
+  
+  <!-- LCD Display Screen -->
+  <rect x="160" y="110" width="80" height="60" rx="5" ry="5" 
+        fill="#000" stroke="#00d4ff" stroke-width="1"/>
+  <rect x="165" y="115" width="70" height="50" rx="3" ry="3" 
+        fill="#00d4ff" opacity="0.3"/>
+  
+  <!-- Left Leg (5 DOFs) -->
+  <!-- Hip Joint 1 (Roll) -->
+  <circle cx="130" cy="220" r="8" fill="#ff0096" stroke="#fff" stroke-width="1"/>
+  <!-- Hip Joint 2 (Pitch) -->
+  <circle cx="130" cy="240" r="6" fill="#ff0096" stroke="#fff" stroke-width="1"/>
+  <!-- Hip Joint 3 (Yaw) -->
+  <circle cx="130" cy="260" r="6" fill="#ff0096" stroke="#fff" stroke-width="1"/>
+  
+  <!-- Left Leg Segments -->
+  <rect x="125" y="220" width="10" height="40" rx="5" ry="5" 
+        fill="url(#robotGradient)" stroke="#00d4ff" stroke-width="1"/>
+  <rect x="125" y="260" width="10" height="40" rx="5" ry="5" 
+        fill="url(#robotGradient)" stroke="#00d4ff" stroke-width="1"/>
+  
+  <!-- Left Knee Joint -->
+  <circle cx="130" cy="300" r="8" fill="#ff0096" stroke="#fff" stroke-width="1"/>
+  
+  <!-- Left Lower Leg -->
+  <rect x="125" y="300" width="10" height="50" rx="5" ry="5" 
+        fill="url(#robotGradient)" stroke="#00d4ff" stroke-width="1"/>
+  
+  <!-- Left Wheel -->
+  <circle cx="130" cy="370" r="25" fill="url(#wheelGradient)" stroke="#333" stroke-width="2"/>
+  <circle cx="130" cy="370" r="20" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+  <circle cx="130" cy="370" r="15" fill="none" stroke="#999" stroke-width="1"/>
+  
+  <!-- Right Leg (5 DOFs) -->
+  <!-- Hip Joint 1 (Roll) -->
+  <circle cx="270" cy="220" r="8" fill="#ff0096" stroke="#fff" stroke-width="1"/>
+  <!-- Hip Joint 2 (Pitch) -->
+  <circle cx="270" cy="240" r="6" fill="#ff0096" stroke="#fff" stroke-width="1"/>
+  <!-- Hip Joint 3 (Yaw) -->
+  <circle cx="270" cy="260" r="6" fill="#ff0096" stroke="#fff" stroke-width="1"/>
+  
+  <!-- Right Leg Segments -->
+  <rect x="265" y="220" width="10" height="40" rx="5" ry="5" 
+        fill="url(#robotGradient)" stroke="#00d4ff" stroke-width="1"/>
+  <rect x="265" y="260" width="10" height="40" rx="5" ry="5" 
+        fill="url(#robotGradient)" stroke="#00d4ff" stroke-width="1"/>
+  
+  <!-- Right Knee Joint -->
+  <circle cx="270" cy="300" r="8" fill="#ff0096" stroke="#fff" stroke-width="1"/>
+  
+  <!-- Right Lower Leg -->
+  <rect x="265" y="300" width="10" height="50" rx="5" ry="5" 
+        fill="url(#robotGradient)" stroke="#00d4ff" stroke-width="1"/>
+  
+  <!-- Right Wheel -->
+  <circle cx="270" cy="370" r="25" fill="url(#wheelGradient)" stroke="#333" stroke-width="2"/>
+  <circle cx="270" cy="370" r="20" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+  <circle cx="270" cy="370" r="15" fill="none" stroke="#999" stroke-width="1"/>
+  
+  <!-- Antenna -->
+  <line x1="200" y1="100" x2="200" y2="70" stroke="#00d4ff" stroke-width="2"/>
+  <circle cx="200" cy="65" r="5" fill="#ff0096" stroke="#fff" stroke-width="1"/>
+  
+  <!-- Stereo Camera -->
+  <rect x="140" y="80" width="20" height="15" rx="3" ry="3" 
+        fill="#000" stroke="#00d4ff" stroke-width="1"/>
+  <rect x="240" y="80" width="20" height="15" rx="3" ry="3" 
+        fill="#000" stroke="#00d4ff" stroke-width="1"/>
+  <circle cx="150" cy="87" r="3" fill="#00d4ff"/>
+  <circle cx="250" cy="87" r="3" fill="#00d4ff"/>
+  
+  <!-- Battery Indicator -->
+  <rect x="160" y="180" width="60" height="8" rx="4" ry="4" 
+        fill="#333" stroke="#00d4ff" stroke-width="1"/>
+  <rect x="162" y="182" width="56" height="4" rx="2" ry="2" 
+        fill="#00ff00"/>
+  
+  <!-- DOF Labels -->
+  <text x="50" y="220" fill="#ff0096" font-size="10" font-family="Arial">Hip Roll</text>
+  <text x="50" y="240" fill="#ff0096" font-size="10" font-family="Arial">Hip Pitch</text>
+  <text x="50" y="260" fill="#ff0096" font-size="10" font-family="Arial">Hip Yaw</text>
+  <text x="50" y="300" fill="#ff0096" font-size="10" font-family="Arial">Knee</text>
+  
+  <!-- Title -->
+  <text x="200" y="420" text-anchor="middle" fill="#00d4ff" font-size="16" font-family="Arial" font-weight="bold">
+    Whleaper Robot
+  </text>
+  <text x="200" y="440" text-anchor="middle" fill="#b8b8b8" font-size="12" font-family="Arial">
+    10-DOF Bipedal Wheeled Robot
+  </text>
+  <text x="200" y="460" text-anchor="middle" fill="#b8b8b8" font-size="10" font-family="Arial">
+    Tsinghua University Research
+  </text>
+  
+  <!-- Technical Specifications -->
+  <text x="200" y="480" text-anchor="middle" fill="#888" font-size="9" font-family="Arial">
+    5 DOFs per leg • 3 Hip Joints • Wheel Integration
+  </text>
+</svg>
