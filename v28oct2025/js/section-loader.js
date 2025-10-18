@@ -264,7 +264,7 @@ class SectionLoader {
       });
     }, observerOptions);
 
-    document.querySelectorAll('.section, .question-card, .robot-form, .roboverse, .feature-card, .feature-item, .spec-category, .pricing-card, .launch-card').forEach(el => {
+    document.querySelectorAll('.section, .question-card, .robot-form, .roboverse').forEach(el => {
       observer.observe(el);
     });
     console.log('Animations setup complete');
