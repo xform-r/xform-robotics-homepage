@@ -61,12 +61,56 @@ body {
 /* Product Launch Banner */
 .product-banner {
   background: linear-gradient(135deg, #00d4ff 0%, #ff0096 100%);
-  padding: 1.5rem 0;
+  padding: 0.8rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
   margin-top: 100px; /* Increased margin to account for fixed header */
   z-index: 999; /* Just below header z-index */
+}
+
+.banner-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.banner-text {
+  text-align: center;
+  flex: 1;
+}
+
+.banner-robo-image {
+  width: 144px;
+  height: 144px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.banner-left {
+  order: 1;
+}
+
+.banner-right {
+  order: 3;
+}
+
+.banner-text {
+  order: 2;
+}
+
+.banner-mobile-layout {
+  display: none;
+}
+
+.banner-robo-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .product-banner::before {
@@ -889,8 +933,17 @@ body {
   }
   
   .product-banner {
-    padding: 1rem 0;
-    margin-top: 90px; /* Adjust for smaller header on mobile */
+    padding: 0.6rem 0;
+    margin-top: 120px; /* Adjust for smaller header on mobile */
+  }
+  
+  .banner-layout {
+    gap: 0.8rem;
+  }
+  
+  .banner-robo-image {
+    width: 126px;
+    height: 126px;
   }
   
   .banner-title {
@@ -1028,8 +1081,8 @@ body {
   }
 }
 
-/* Small Mobile */
-@media (max-width: 480px) {
+/* Mobile */
+@media (max-width: 768px) {
   .container {
     padding: 0 0.5rem;
   }
@@ -1050,8 +1103,38 @@ body {
   }
   
   .product-banner {
-    padding: 0.8rem 0;
-    margin-top: 60px; /* Adjust for smaller header on small mobile */
+    padding: 0.5rem 0;
+    margin-top: 100px; /* Adjust for smaller header on small mobile */
+  }
+  
+  .banner-layout {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  /* Hide desktop layout on mobile */
+  .banner-left,
+  .banner-right,
+  .banner-text {
+    display: none;
+  }
+  
+  /* Show mobile layout */
+  .banner-mobile-layout {
+    display: block;
+    text-align: center;
+  }
+  
+  .banner-images-mobile {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .banner-robo-image {
+    width: 108px;
+    height: 108px;
   }
   
   .banner-title {
