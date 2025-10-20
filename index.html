@@ -22,13 +22,13 @@
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <a href="#" class="logo">XFORM ROBOTICS</a>
+        <a href="#" class="logo" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'logo_home'});">XFORM ROBOTICS</a>
         <nav class="nav-links">
-          <a href="#rethinking-robot-design">About</a>
-          <a href="#robot-forms">Robots</a>
-          <a href="#roboverse">Roboverse</a>
-          <a href="#research">Research</a>
-          <a href="robo-pet.html">Robo Pet</a>
+          <a href="#rethinking-robot-design" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_about'});">About</a>
+          <a href="#robot-forms" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_robots'});">Robots</a>
+          <a href="#roboverse" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_roboverse'});">Roboverse</a>
+          <a href="#research" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_research'});">Research</a>
+          <a href="robo-pet.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_robo_pet'});">Robo Pet</a>
         </nav>
       </div>
     </div>
@@ -45,7 +45,7 @@
           <div class="banner-text">
             <h2 class="banner-title">🚀 WE'RE LAUNCHING OUR FIRST PRODUCT!</h2>
             <p class="banner-subtitle">Meet the XFORM Robo Pet - Your AI-powered companion</p>
-            <a href="robo-pet.html" class="banner-cta">Learn More & Pre-Order</a>
+            <a href="robo-pet.html" class="banner-cta" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'banner_cta_desktop'});">Learn More & Pre-Order</a>
           </div>
           <img src="images/Robo Pet/ChatGPT Image Oct 18, 2025, 05_31_55 PM.png" 
                alt="XFORM Robo Pet - Side view" 
@@ -63,7 +63,7 @@
                    class="banner-robo-image">
             </div>
             <p class="banner-subtitle">Meet the XFORM Robo Pet - Your AI-powered companion</p>
-            <a href="robo-pet.html" class="banner-cta">Learn More & Pre-Order</a>
+            <a href="robo-pet.html" class="banner-cta" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'banner_cta_mobile'});">Learn More & Pre-Order</a>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@
     <div class="container">
       <h1 class="fade-in">WHY DO ROBOTS HAVE TO LOOK LIKE HUMANS?</h1>
       <p class="fade-in">Discover the future of robotics where form follows function, not human imitation.</p>
-      <a href="#robot-forms" class="cta-button fade-in">Explore Robot Forms</a>
+      <a href="#robot-forms" class="cta-button fade-in" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'explore_robot_forms'});">Explore Robot Forms</a>
     </div>
   </section>
 
@@ -114,7 +114,7 @@
                 <svg class="gmail-icon" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
-                xformrobotics@gmail.com
+                <a href="mailto:xformrobotics@gmail.com" onclick="gtag('event', 'click', {'event_category': 'contact', 'event_label': 'footer_email'});">xformrobotics@gmail.com</a>
               </p>
     </div>
   </footer>
@@ -126,5 +126,38 @@
   
   <!-- Image Optimizer -->
   <script src="js/image-optimizer.js"></script>
+  
+  <!-- Enhanced Analytics Tracking -->
+  <script>
+    // Track scroll depth
+    let maxScroll = 0;
+    window.addEventListener('scroll', function() {
+      const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+      if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
+        maxScroll = scrollPercent;
+        gtag('event', 'scroll', {
+          'event_category': 'engagement',
+          'event_label': scrollPercent + '%'
+        });
+      }
+    });
+    
+    // Track section views
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          gtag('event', 'view_section', {
+            'event_category': 'engagement',
+            'event_label': entry.target.id || 'unknown_section'
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>

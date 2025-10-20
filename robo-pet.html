@@ -22,13 +22,13 @@
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <a href="index.html" class="logo">XFORM ROBOTICS</a>
+        <a href="index.html" class="logo" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'logo_home'});">XFORM ROBOTICS</a>
         <nav class="nav-links">
-          <a href="index.html#rethinking-robot-design">About</a>
-          <a href="index.html#robot-forms">Robots</a>
-          <a href="index.html#roboverse">Roboverse</a>
-          <a href="index.html#research">Research</a>
-          <a href="robo-pet.html" class="active">Robo Pet</a>
+          <a href="index.html#rethinking-robot-design" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_about'});">About</a>
+          <a href="index.html#robot-forms" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_robots'});">Robots</a>
+          <a href="index.html#roboverse" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_roboverse'});">Roboverse</a>
+          <a href="index.html#research" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_research'});">Research</a>
+          <a href="robo-pet.html" class="active" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_robo_pet'});">Robo Pet</a>
         </nav>
       </div>
     </div>
@@ -39,7 +39,7 @@
     <div class="container">
       <h1 class="fade-in">XFORM ROBO PET</h1>
       <p class="fade-in">A semi-intrusive social robot companion designed to help the elderly cope with loneliness and detect emergency situations. Pure natural language conversation - no app required.</p>
-      <a href="#pre-order" class="cta-button fade-in">Pre-Order Now</a>
+      <a href="#pre-order" class="cta-button fade-in" onclick="gtag('event', 'click', {'event_category': 'engagement', 'event_label': 'pre_order_cta'});">Pre-Order Now</a>
     </div>
   </section>
 
@@ -195,7 +195,7 @@
             </div>
             
             <div class="pricing-cta">
-              <a href="mailto:xformrobotics@gmail.com?subject=Robo Pet Pre-Order&body=Hi, I would like to pre-order the XFORM Robo Pet. Please provide payment details." class="pre-order-button">
+              <a href="mailto:xformrobotics@gmail.com?subject=Robo Pet Pre-Order&body=Hi, I would like to pre-order the XFORM Robo Pet. Please provide payment details." class="pre-order-button" onclick="gtag('event', 'click', {'event_category': 'conversion', 'event_label': 'pre_order_button'});">
                 Pre-Order Now
               </a>
               <p class="shipping-note">Expected delivery: Dec 2026</p>
@@ -229,7 +229,7 @@
         <svg class="gmail-icon" viewBox="0 0 24 24" fill="currentColor">
           <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
-        xformrobotics@gmail.com
+        <a href="mailto:xformrobotics@gmail.com" onclick="gtag('event', 'click', {'event_category': 'contact', 'event_label': 'footer_email'});">xformrobotics@gmail.com</a>
       </p>
     </div>
   </footer>
@@ -239,5 +239,38 @@
   
   <!-- Image Optimizer -->
   <script src="js/image-optimizer.js"></script>
+  
+  <!-- Enhanced Analytics Tracking -->
+  <script>
+    // Track scroll depth
+    let maxScroll = 0;
+    window.addEventListener('scroll', function() {
+      const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+      if (scrollPercent > maxScroll && scrollPercent % 25 === 0) {
+        maxScroll = scrollPercent;
+        gtag('event', 'scroll', {
+          'event_category': 'engagement',
+          'event_label': scrollPercent + '%'
+        });
+      }
+    });
+    
+    // Track section views
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          gtag('event', 'view_section', {
+            'event_category': 'engagement',
+            'event_label': entry.target.id || 'unknown_section'
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
