@@ -30,6 +30,27 @@ XFORM Robotics advocates for a fundamental shift in robot design philosophy: **"
 - **Performance Optimized**: Lazy loading, image optimization
 - **Accessibility**: ARIA labels, keyboard navigation, screen reader support
 
+## 📊 **Analytics Tracking**
+
+### **Google Analytics 4 Implementation**
+- **Measurement ID**: G-JSZGXM4QHM
+- **Scope**: All main pages (index.html, robo-pet.html)
+- **Event Categories**: Navigation, Engagement, Conversion, Contact, External
+
+### **Key Business Metrics**
+- **Primary KPI**: `pre_order_button` conversions
+- **Funnel Tracking**: Banner CTA → Pre-order CTA → Email conversion
+- **Engagement**: Scroll depth (25%, 50%, 75%, 100%), section views
+- **Navigation**: Menu clicks, logo interactions, external links
+
+### **Event Structure**
+```javascript
+gtag('event', 'click', {
+  'event_category': 'conversion',
+  'event_label': 'pre_order_button'
+});
+```
+
 ## 📱 **Mobile Optimization**
 
 ### **Responsive Breakpoints**
