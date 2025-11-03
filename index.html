@@ -22,13 +22,21 @@
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <a href="#" class="logo" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'logo_home'});">XFORM ROBOTICS</a>
-        <nav class="nav-links">
+        <button class="burger-menu" id="burgerMenu" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a href="index.html" class="logo" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'logo_home'});">
+          <img src="images/xform_logo.png" alt="XFORM ROBOTICS" class="logo-image">
+        </a>
+        <nav class="nav-links" id="navLinks">
           <a href="#rethinking-robot-design" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_about'});">About</a>
           <a href="#robot-forms" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_robots'});">Robots</a>
           <a href="#roboverse" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_roboverse'});">Roboverse</a>
           <a href="#research" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_research'});">Research</a>
           <a href="robo-pet.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_robo_pet'});">Robo Pet</a>
+          <a href="home-1.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_home1'});">Home 1</a>
         </nav>
       </div>
     </div>
@@ -157,6 +165,35 @@
     // Observe all sections
     document.querySelectorAll('section').forEach(section => {
       observer.observe(section);
+    });
+    
+    // Burger Menu Toggle
+    const burgerMenu = document.getElementById('burgerMenu');
+    const navLinks = document.getElementById('navLinks');
+    
+    burgerMenu.addEventListener('click', () => {
+      burgerMenu.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking on a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burgerMenu.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !burgerMenu.contains(e.target)) {
+        burgerMenu.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+      }
     });
   </script>
 </body>

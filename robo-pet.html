@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>XFORM Robo Pet - Your AI-Powered Companion | XFORM Robotics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="Meet the XFORM Robo Pet - A semi-intrusive social robot designed to help the elderly cope with loneliness and provide emergency detection. Natural language conversation, no app required.">
   <link rel="stylesheet" href="styles.css">
   
@@ -22,13 +22,21 @@
   <header class="header">
     <div class="container">
       <div class="header-content">
-        <a href="index.html" class="logo" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'logo_home'});">XFORM ROBOTICS</a>
-        <nav class="nav-links">
+        <button class="burger-menu" id="burgerMenu" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a href="index.html" class="logo" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'logo_home'});">
+          <img src="images/xform_logo.png" alt="XFORM ROBOTICS" class="logo-image">
+        </a>
+        <nav class="nav-links" id="navLinks">
           <a href="index.html#rethinking-robot-design" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_about'});">About</a>
           <a href="index.html#robot-forms" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_robots'});">Robots</a>
           <a href="index.html#roboverse" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_roboverse'});">Roboverse</a>
           <a href="index.html#research" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_research'});">Research</a>
           <a href="robo-pet.html" class="active" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_robo_pet'});">Robo Pet</a>
+          <a href="home-1.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'nav_home1'});">Home 1</a>
         </nav>
       </div>
     </div>
@@ -205,14 +213,17 @@
         
         <div class="launch-info">
           <div class="launch-card">
-            <h4>🎁 Your Chance for Happiness Starts Here!</h4>
-            <p>• <strong>🔥🔥🔥 FIRST 10 PIONEERS: SAVE 45% 🔥🔥🔥</strong><br><em>Be among the first to bring joy home!</em></p>
-            <p>• 🔥 Next 40 early adopters: Save 40%</p>
-            <p>• 🔥 Next 100 smart buyers: Save 30%</p>
-            <p>• <small>Next 250 investors: Save 20%</small></p>
-            <p>• 🔥 <strong>Only 400</strong> units worldwide - Designed & socially trained in Europe & built globally</p>
-            <p>• 🚀 Free worldwide shipping for first 100 customers - Happiness delivered to your door!</p>
-            <p>• 💝 Priority customer support - We're here for your journey to happiness!</p>
+            <h4>The Journey to Happiness Begins Here</h4>
+            <p>Experience innovation with purpose.<br>Be among the first to bring home a new kind of joy.</p>
+            
+            <h5>Early Access Offers</h5>
+            <p>• <strong>First 10 Pioneers: Save 45%</strong></p>
+            <p>• Next 40 Early Adopters: Save 40%</p>
+            <p>• Next 100 Smart Buyers: Save 30%</p>
+            <p>• Next 250 Investors: Save 20%</p>
+            
+            <p>• Limited to <strong>400 units worldwide</strong>.<br>Designed and socially trained in Europe — built with precision across the globe.</p>
+            <p>• Enjoy free worldwide shipping for the first 100 customers.<br>Receive priority customer support — because your journey to happiness deserves our full attention.</p>
           </div>
         </div>
       </section>
@@ -270,6 +281,35 @@
     // Observe all sections
     document.querySelectorAll('section').forEach(section => {
       observer.observe(section);
+    });
+    
+    // Burger Menu Toggle
+    const burgerMenu = document.getElementById('burgerMenu');
+    const navLinks = document.getElementById('navLinks');
+    
+    burgerMenu.addEventListener('click', () => {
+      burgerMenu.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking on a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burgerMenu.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !burgerMenu.contains(e.target)) {
+        burgerMenu.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+      }
     });
   </script>
 </body>
