@@ -950,6 +950,24 @@ h1, h2, h3, h4, h5, h6, p, span, div, a {
   margin-bottom: 1rem;
 }
 
+.logo-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.logo-download a {
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.logo-download a:hover {
+  color: #ff0096;
+}
+
 .copyright {
   font-size: 0.9rem;
   color: #888;
