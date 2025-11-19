@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>XFORM Token - Official Litepaper | XFORM Robotics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="XFORM Token Official Litepaper - Utility Token Framework prepared for disclosure under EU MiCAR guidelines.">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="stylesheet" href="../styles.css?v=13">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSZGXM4QHM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JSZGXM4QHM');
+  </script>
+  
+  <style>
+    /* Terms-specific styles */
+    .terms-hero {
+      padding: 8rem 0 4rem;
+      text-align: center;
+      background: linear-gradient(45deg, rgba(0, 212, 255, 0.1), rgba(255, 0, 150, 0.1));
+    }
+    
+    .terms-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .terms-version {
+      font-size: 1.1rem;
+      color: #00d4ff;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    
+    .terms-intro {
+      font-size: 1.2rem;
+      color: #b8b8b8;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    
+    .terms-section {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .terms-section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+    }
+    
+    .terms-section h2 {
+      font-size: 1.8rem;
+      color: #00d4ff;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+    
+    .terms-section h3 {
+      font-size: 1.4rem;
+      color: #ff0096;
+      margin: 2rem 0 1rem 0;
+      text-align: left;
+    }
+    
+    .terms-section p {
+      font-size: 1rem;
+      color: #b8b8b8;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    
+    .terms-section ul {
+      list-style: none;
+      margin: 1rem 0 1rem 1rem;
+    }
+    
+    .terms-section li {
+      padding: 0.6rem 0 0.6rem 1.5rem;
+      color: #b8b8b8;
+      position: relative;
+      line-height: 1.7;
+    }
+    
+    .terms-section li::before {
+      content: "▶";
+      color: #00d4ff;
+      position: absolute;
+      left: 0;
+      top: 0.6rem;
+    }
+    
+    .terms-section strong {
+      color: #f5f5f5;
+      font-weight: 600;
+    }
+    
+    .highlight-box {
+      background: rgba(0, 212, 255, 0.1);
+      border-left: 4px solid #00d4ff;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+    
+    .highlight-box p {
+      margin: 0;
+      color: #f5f5f5;
+    }
+    
+    .warning-box {
+      background: rgba(255, 0, 150, 0.1);
+      border-left: 4px solid #ff0096;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+    
+    .warning-box p {
+      margin: 0;
+      color: #f5f5f5;
+    }
+    
+    .token-specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .spec-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+    
+    .spec-label {
+      font-size: 0.9rem;
+      color: #00d4ff;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    .spec-value {
+      font-size: 1.1rem;
+      color: #f5f5f5;
+      font-weight: 600;
+    }
+    
+    .allocation-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    
+    .allocation-table th,
+    .allocation-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .allocation-table th {
+      color: #00d4ff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      background: rgba(0, 212, 255, 0.1);
+    }
+    
+    .allocation-table td {
+      color: #b8b8b8;
+      line-height: 1.6;
+    }
+    
+    .allocation-table tr:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .regulatory-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    
+    .regulatory-table th,
+    .regulatory-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .regulatory-table th {
+      color: #00d4ff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      background: rgba(0, 212, 255, 0.1);
+      width: 40%;
+    }
+    
+    .regulatory-table td {
+      color: #b8b8b8;
+      line-height: 1.6;
+    }
+    
+    .regulatory-table tr:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .contact-box {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 0, 150, 0.1));
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+    
+    .contact-box h2 {
+      color: #00d4ff;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-box p {
+      font-size: 1.1rem;
+      color: #b8b8b8;
+      margin: 0.5rem 0;
+    }
+    
+    .contact-box a {
+      color: #00d4ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-box a:hover {
+      color: #ff0096;
+    }
+    
+    .summary-box {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(255, 0, 150, 0.15));
+      border: 2px solid rgba(0, 212, 255, 0.3);
+      border-radius: 15px;
+      padding: 2.5rem;
+      margin: 3rem 0;
+    }
+    
+    .summary-box h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #00d4ff;
+      margin-bottom: 2rem;
+    }
+    
+    .summary-box ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .summary-box li {
+      padding: 1rem 0 1rem 2rem;
+      color: #f5f5f5;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      position: relative;
+    }
+    
+    .summary-box li::before {
+      content: "✓";
+      color: #00d4ff;
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    @media (max-width: 768px) {
+      .terms-hero {
+        padding: 6rem 0 3rem;
+      }
+      
+      .terms-container {
+        padding: 0 1rem;
+      }
+      
+      .terms-section {
+        padding: 1.5rem;
+      }
+      
+      .terms-section h2 {
+        font-size: 1.5rem;
+      }
+      
+      .terms-section h3 {
+        font-size: 1.2rem;
+      }
+      
+      .token-specs {
+        grid-template-columns: 1fr;
+      }
+      
+      .allocation-table,
+      .regulatory-table {
+        font-size: 0.9rem;
+      }
+      
+      .allocation-table th,
+      .allocation-table td,
+      .regulatory-table th,
+      .regulatory-table td {
+        padding: 0.8rem 0.5rem;
+      }
+      
+      .allocation-table,
+      .regulatory-table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="../index.html" class="logo" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'logo_home'});">
+          <img src="../images/xform_logo.png" alt="XFORM ROBOTICS" class="logo-image">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="terms-hero">
+    <div class="terms-container">
+      <h1 class="fade-in">⚙️ XFORM Robotics – Official Litepaper</h1>
+      <p class="terms-version fade-in">Proposal v0.1 – Utility Token Framework</p>
+      <p class="terms-intro fade-in">
+        Prepared for disclosure under EU MiCAR guidelines. 
+        This document outlines the framework for the XFORM utility token on the Solana blockchain.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section style="padding: 4rem 0; background: rgba(0, 0, 0, 0.8);">
+    <div class="terms-container">
+      
+      <!-- Overview -->
+      <div class="terms-section fade-in">
+        <h2>1️⃣ Overview</h2>
+        <p><strong>Issuer:</strong> XFORM Robotics (sole proprietorship – Netherlands)</p>
+        <p><strong>Token name:</strong> XFORM</p>
+        <p><strong>Symbol:</strong> XFORM</p>
+        <p><strong>Blockchain:</strong> Solana (mainnet, SPL standard)</p>
+        <p><strong>Total supply:</strong> 100,000,000 tokens (fixed, no remint)</p>
+        <p><strong>Initial book value:</strong> ≈ USD 0.000001 per token (total ≈ USD 100)</p>
+        <p><strong>Token class:</strong> Utility / Reward Token</p>
+        <p><strong>Jurisdiction:</strong> Netherlands – European Union</p>
+        
+        <div class="token-specs">
+          <div class="spec-item">
+            <div class="spec-label">Total Supply</div>
+            <div class="spec-value">100,000,000</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Initial Value</div>
+            <div class="spec-value">≈ $0.000001</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Blockchain</div>
+            <div class="spec-value">Solana (SPL)</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Token Type</div>
+            <div class="spec-value">Utility</div>
+          </div>
+        </div>
+        
+        <p style="margin-top: 2rem;">XFORM Robotics is developing modular robotic assistants and related AI software.</p>
+        <p>The XFORM token may function as an internal utility asset used to acknowledge contributors and provide customer incentives.</p>
+      </div>
+
+      <!-- Purpose -->
+      <div class="terms-section fade-in">
+        <h2>2️⃣ Purpose</h2>
+        <p>The XFORM token exists to:</p>
+        <ul>
+          <li>Record and reward verified work and community contributions.</li>
+          <li>Deliver loyalty credits to early buyers.</li>
+          <li>Serve as the transaction medium for platform services.</li>
+          <li>Provide a transparent accounting of value transfer inside the XFORM ecosystem.</li>
+        </ul>
+        
+        <div class="warning-box">
+          <p><strong>Important:</strong> It is not equity, debt, or a financial instrument promising profit. Any future value may fluctuate only according to user demand for XFORM products and services.</p>
+        </div>
+      </div>
+
+      <!-- Token Supply & Allocation -->
+      <div class="terms-section fade-in">
+        <h2>3️⃣ Token Supply & Allocation</h2>
+        
+        <table class="allocation-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Tokens</th>
+              <th>% of Total</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Public circulation (sales + cashback)</strong></td>
+              <td>20,000,000</td>
+              <td>20%</td>
+              <td>For customers and open-market users.</td>
+            </tr>
+            <tr>
+              <td><strong>Team & founder reserve</strong></td>
+              <td>30,000,000</td>
+              <td>30%</td>
+              <td>3- to 4-year vesting; operational funding and liquidity.</td>
+            </tr>
+            <tr>
+              <td><strong>Contributors / volunteers / rewards</strong></td>
+              <td>5,000,000</td>
+              <td>5%</td>
+              <td>Task bounties and R&D incentives.</td>
+            </tr>
+            <tr>
+              <td><strong>Partnerships / marketing</strong></td>
+              <td>15,000,000</td>
+              <td>15%</td>
+              <td>Strategic collaborations and outreach.</td>
+            </tr>
+            <tr>
+              <td><strong>Treasury & liquidity provision</strong></td>
+              <td>20,000,000</td>
+              <td>20%</td>
+              <td>Market-making, DEX liquidity, and buy-back reserve.</td>
+            </tr>
+            <tr>
+              <td><strong>Community governance pool (optional)</strong></td>
+              <td>10,000,000</td>
+              <td>10%</td>
+              <td>DAO and governance rewards.</td>
+            </tr>
+            <tr style="background: rgba(0, 212, 255, 0.1); font-weight: 600;">
+              <td><strong>Total supply (fixed)</strong></td>
+              <td><strong>100,000,000</strong></td>
+              <td><strong>100%</strong></td>
+              <td><strong>Hard-capped; no further minting.</strong></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="highlight-box" style="margin-top: 2rem;">
+          <p><strong>Transparency:</strong> All allocations will be visible on-chain. Smart-contract source code will be published after external security review.</p>
+        </div>
+      </div>
+
+      <!-- Proposed Economic Model -->
+      <div class="terms-section fade-in">
+        <h2>4️⃣ Proposed Economic Model</h2>
+        
+        <h3>Profit-Linked Treasury Flow</h3>
+        <p>Each product sale contributes ~20% of realised profit to the on-chain Treasury.</p>
+        <p>The Treasury swaps funds (fiat → USDC → XFORM) and redistributes tokens to contributors and customers.</p>
+        
+        <div class="highlight-box">
+          <p><strong>No new tokens are created:</strong> All redistribution occurs within the fixed 100M supply.</p>
+        </div>
+        
+        <h3>Reference Pricing</h3>
+        <ul>
+          <li><strong>Internal acceptance rate:</strong> Tokens may be used for early access of new features.</li>
+          <li><strong>Accounting value at mint:</strong> USD 0.000001 per token.</li>
+          <li><strong>Market pricing:</strong> Will be determined freely by supply and demand once trading is enabled.</li>
+        </ul>
+      </div>
+
+      <!-- Regulatory & Tax Treatment -->
+      <div class="terms-section fade-in">
+        <h2>5️⃣ Regulatory & Tax Treatment</h2>
+        
+        <table class="regulatory-table">
+          <tbody>
+            <tr>
+              <th>Aspect</th>
+              <th>Treatment (under NL / EU MiCAR)</th>
+            </tr>
+            <tr>
+              <td><strong>Token nature</strong></td>
+              <td>Utility token; access to goods and services, not profit rights.</td>
+            </tr>
+            <tr>
+              <td><strong>Fixed supply</strong></td>
+              <td>Declared in smart contract and white paper; no mint function.</td>
+            </tr>
+            <tr>
+              <td><strong>Issuer obligations</strong></td>
+              <td>Provide white paper disclosure and risk statement before public sale.</td>
+            </tr>
+            <tr>
+              <td><strong>Taxation (issuer)</strong></td>
+              <td>Income tax on actual product sales revenue only; tokens at mint ≈ zero value.</td>
+            </tr>
+            <tr>
+              <td><strong>Taxation (holders)</strong></td>
+              <td>Non taxable until tokens have market value; then as an "asset".</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Governance & Transparency -->
+      <div class="terms-section fade-in">
+        <h2>6️⃣ Governance & Transparency</h2>
+        <ul>
+          <li>Multi-signature control for Treasury and team reserves.</li>
+          <li>Vesting contracts visible on-chain (minimum 3 years).</li>
+          <li>Open-source publication of token contract and audit.</li>
+        </ul>
+      </div>
+
+      <!-- Risk Disclosure -->
+      <div class="terms-section fade-in">
+        <h2>8️⃣ Risk Disclosure</h2>
+        <div class="warning-box">
+          <p><strong>Important Risk Notice:</strong> XFORM tokens have no market value, and cannot be traded publicly until explicitly allowed and communicated by XFORM Robotics.</p>
+        </div>
+        <ul>
+          <li>Tokens cannot substitute for legal tender.</li>
+          <li>Regulatory interpretations may evolve under MiCAR; the issuer will adapt filings accordingly.</li>
+          <li>Security of private wallets remains the responsibility of holders.</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact-box fade-in">
+        <h2>9️⃣ Contact</h2>
+        <p><strong>Issuer:</strong> XFORM Robotics</p>
+        <p><strong>Registered in:</strong> Netherlands</p>
+        <p><strong>Contact email:</strong> <a href="mailto:xformrobotics@gmail.com">xformrobotics@gmail.com</a></p>
+        <p><strong>Website:</strong> <a href="https://www.xformrobotics.com/xform-token" target="_blank">www.xformrobotics.com/xform-token</a></p>
+      </div>
+
+      <!-- Summary -->
+      <div class="summary-box fade-in">
+        <h2>✅ Summary</h2>
+        <ul>
+          <li>Fixed 100M token supply (~USD 100 nominal book value).</li>
+          <li>Utility token only – no profit rights.</li>
+          <li>Transparent on-chain accounting and multi-sig treasury.</li>
+          <li>Value driven solely by real use of XFORM products and services.</li>
+        </ul>
+      </div>
+
+      <!-- Back to Home -->
+      <div style="text-align: center; margin: 3rem 0;">
+        <a href="../index.html" class="cta-button">Back to Home</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <h2>XFORM ROBOTICS</h2>
+      <p>Robots for everyone! Everyday!</p>
+      <p class="copyright">&copy; 2025 XFORM Robotics. Technology that cares.</p>
+      <p class="email">
+        <svg class="gmail-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+        <a href="mailto:xformrobotics@gmail.com" onclick="gtag('event', 'click', {'event_category': 'contact', 'event_label': 'footer_email'});">xformrobotics@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+  
+  <!-- Fade in animations -->
+  <script>
+    // Fade in animations
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    fadeElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      fadeObserver.observe(el);
+    });
+    
+    // Track page view
+    gtag('event', 'page_view', {
+      'page_title': 'XFORM Token Official Litepaper',
+      'page_location': window.location.href,
+      'page_path': window.location.pathname
+    });
+  </script>
+</body>
+</html>
+
