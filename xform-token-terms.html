@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>XFORM Token - Terms & Conditions | XFORM Robotics</title>
+  <title>XFORM Token - Official Litepaper | XFORM Robotics</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="XFORM Token Terms & Conditions - Comprehensive legal framework for the XFORM utility token on Solana blockchain.">
+  <meta name="description" content="XFORM Token Official Litepaper - Utility Token Framework prepared for disclosure under EU MiCAR guidelines.">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -163,43 +163,65 @@
       font-weight: 600;
     }
     
-    .quick-reference {
-      background: rgba(255, 255, 255, 0.05);
-      border: 2px solid rgba(0, 212, 255, 0.3);
-      border-radius: 15px;
-      padding: 2.5rem;
-      margin: 3rem 0;
-    }
-    
-    .quick-reference h2 {
-      text-align: center;
-      font-size: 2rem;
-      color: #00d4ff;
-      margin-bottom: 2rem;
-    }
-    
-    .reference-table {
+    .allocation-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1rem;
+      margin: 1.5rem 0;
+      background: rgba(255, 255, 255, 0.03);
     }
     
-    .reference-table th,
-    .reference-table td {
+    .allocation-table th,
+    .allocation-table td {
       padding: 1rem;
       text-align: left;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
-    .reference-table th {
+    .allocation-table th {
       color: #00d4ff;
       font-weight: 600;
       font-size: 1.1rem;
+      background: rgba(0, 212, 255, 0.1);
     }
     
-    .reference-table td {
+    .allocation-table td {
       color: #b8b8b8;
       line-height: 1.6;
+    }
+    
+    .allocation-table tr:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .regulatory-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: rgba(255, 255, 255, 0.03);
+    }
+    
+    .regulatory-table th,
+    .regulatory-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .regulatory-table th {
+      color: #00d4ff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      background: rgba(0, 212, 255, 0.1);
+      width: 40%;
+    }
+    
+    .regulatory-table td {
+      color: #b8b8b8;
+      line-height: 1.6;
+    }
+    
+    .regulatory-table tr:hover {
+      background: rgba(255, 255, 255, 0.05);
     }
     
     .contact-box {
@@ -232,6 +254,44 @@
       color: #ff0096;
     }
     
+    .summary-box {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(255, 0, 150, 0.15));
+      border: 2px solid rgba(0, 212, 255, 0.3);
+      border-radius: 15px;
+      padding: 2.5rem;
+      margin: 3rem 0;
+    }
+    
+    .summary-box h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #00d4ff;
+      margin-bottom: 2rem;
+    }
+    
+    .summary-box ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .summary-box li {
+      padding: 1rem 0 1rem 2rem;
+      color: #f5f5f5;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      position: relative;
+    }
+    
+    .summary-box li::before {
+      content: "✓";
+      color: #00d4ff;
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
     @media (max-width: 768px) {
       .terms-hero {
         padding: 6rem 0 3rem;
@@ -257,13 +317,22 @@
         grid-template-columns: 1fr;
       }
       
-      .reference-table {
+      .allocation-table,
+      .regulatory-table {
         font-size: 0.9rem;
       }
       
-      .reference-table th,
-      .reference-table td {
+      .allocation-table th,
+      .allocation-table td,
+      .regulatory-table th,
+      .regulatory-table td {
         padding: 0.8rem 0.5rem;
+      }
+      
+      .allocation-table,
+      .regulatory-table {
+        display: block;
+        overflow-x: auto;
       }
     }
   </style>
@@ -283,11 +352,11 @@
   <!-- Hero Section -->
   <section class="terms-hero">
     <div class="terms-container">
-      <h1 class="fade-in">XFORM Token — Terms & Conditions</h1>
-      <p class="terms-version fade-in">Version 3.1 — Netherlands, 2025 | Solana SPL</p>
+      <h1 class="fade-in">⚙️ XFORM Robotics – Official Litepaper</h1>
+      <p class="terms-version fade-in">Proposal v0.1 – Utility Token Framework</p>
       <p class="terms-intro fade-in">
-        These Terms govern the acquisition, holding, redemption, and use of XFORM tokens. 
-        Please read carefully before participating in the XFORM ecosystem.
+        Prepared for disclosure under EU MiCAR guidelines. 
+        This document outlines the framework for the XFORM utility token on the Solana blockchain.
       </p>
     </div>
   </section>
@@ -296,293 +365,217 @@
   <section style="padding: 4rem 0; background: rgba(0, 0, 0, 0.8);">
     <div class="terms-container">
       
-      <!-- Introduction -->
+      <!-- Overview -->
       <div class="terms-section fade-in">
-        <h2>1. Introduction</h2>
-        <p>These Terms & Conditions ("Terms") govern the acquisition, holding, redemption, and use of XFORM tokens issued by XFORM Robotics (sole proprietorship, KvK [●]), established in Houten, Netherlands ("XFORM", "we", "us"). By purchasing, earning, receiving, or using XFORM you agree to these Terms, the Tokenomics & Economics White Paper (v3.1), and any documents referenced here.</p>
+        <h2>1️⃣ Overview</h2>
+        <p><strong>Issuer:</strong> XFORM Robotics (sole proprietorship – Netherlands)</p>
+        <p><strong>Token name:</strong> XFORM</p>
+        <p><strong>Symbol:</strong> XFORM</p>
+        <p><strong>Blockchain:</strong> Solana (mainnet, SPL standard)</p>
+        <p><strong>Total supply:</strong> 100,000,000 tokens (fixed, no remint)</p>
+        <p><strong>Initial book value:</strong> ≈ USD 0.000001 per token (total ≈ USD 100)</p>
+        <p><strong>Token class:</strong> Utility / Reward Token</p>
+        <p><strong>Jurisdiction:</strong> Netherlands – European Union</p>
         
         <div class="token-specs">
           <div class="spec-item">
-            <div class="spec-label">Chain</div>
+            <div class="spec-label">Total Supply</div>
+            <div class="spec-value">100,000,000</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Initial Value</div>
+            <div class="spec-value">≈ $0.000001</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Blockchain</div>
             <div class="spec-value">Solana (SPL)</div>
           </div>
           <div class="spec-item">
-            <div class="spec-label">Ticker</div>
-            <div class="spec-value">XFORM</div>
-          </div>
-          <div class="spec-item">
-            <div class="spec-label">Total Supply</div>
-            <div class="spec-value">10,000,000</div>
-          </div>
-          <div class="spec-item">
-            <div class="spec-label">Mint Address</div>
-            <div class="spec-value">TBA on Launch</div>
+            <div class="spec-label">Token Type</div>
+            <div class="spec-value">Utility</div>
           </div>
         </div>
         
-        <div class="highlight-box">
-          <p><strong>Fixed Supply:</strong> 10,000,000 tokens minted once — no reminting ever.</p>
-        </div>
+        <p style="margin-top: 2rem;">XFORM Robotics is developing modular robotic assistants and related AI software.</p>
+        <p>The XFORM token may function as an internal utility asset used to acknowledge contributors, provide customer incentives, and enable future access to early platform services.</p>
       </div>
 
-      <!-- Nature of Token -->
+      <!-- Purpose -->
       <div class="terms-section fade-in">
-        <h2>2. Nature of the Token (Utility Only)</h2>
+        <h2>2️⃣ Purpose</h2>
+        <p>The XFORM token exists to:</p>
         <ul>
-          <li><strong>Utility asset:</strong> XFORM is a utility/reward token usable within the XFORM ecosystem for goods and services.</li>
-          <li><strong>No ownership or profit rights:</strong> XFORM is not a share, security, debt instrument, deposit, or e-money, and does not grant dividends, profit rights, voting in the legal entity, or redemption for cash.</li>
-          <li><strong>Closed-loop first:</strong> Until public listing, XFORM may only be used on XFORM platforms and accepted merchants designated by XFORM.</li>
+          <li>Record and reward verified work and community contributions.</li>
+          <li>Deliver loyalty credits to early buyers.</li>
+          <li>Serve as the transaction medium for future platform services.</li>
+          <li>Provide a transparent accounting of value transfer inside the XFORM ecosystem.</li>
         </ul>
-      </div>
-
-      <!-- Phased Lifecycle -->
-      <div class="terms-section fade-in">
-        <h2>3. Phased Lifecycle & Value References</h2>
-        
-        <h3>Phase 1 — Build (2025→2026)</h3>
-        <p>Non-redeemable; book value ≈ €0; allocations to contributors and internal stakeholders may occur.</p>
-        
-        <h3>Phase 2 — Platform Launch (2026→2028)</h3>
-        <p>Redeemable inside XFORM only. Initial accounting value ≈ $0.0001 per token (~€ equivalent) is applied for internal accounting/tax records at first unlock. Internal exchange rates may change later (e.g., approach ~€1 parity) as disclosed on-site.</p>
-        
-        <h3>Phase 3 — Public Trading (≈2027/2028+)</h3>
-        <p>If/when listed on DEX/venues, market price floats; internal acceptance and rates may differ.</p>
         
         <div class="warning-box">
-          <p><strong>Important:</strong> Any later price movement does not retroactively change earlier accounting/tax values at unlock.</p>
+          <p><strong>Important:</strong> It is not equity, debt, or a financial instrument promising profit. Any future value may fluctuate only according to user demand for XFORM products and services.</p>
         </div>
       </div>
 
-      <!-- Fixed Supply & Allocation -->
+      <!-- Token Supply & Allocation -->
       <div class="terms-section fade-in">
-        <h2>4. Fixed Supply & Allocation</h2>
-        <p><strong>Fixed cap:</strong> 10,000,000 XFORM minted once; no future minting.</p>
+        <h2>3️⃣ Token Supply & Allocation</h2>
         
-        <h3>Internal Build-Stage Allocation (Indicative)</h3>
-        <ul>
-          <li><strong>Contributors & Early Team:</strong> 50% (5,000,000)</li>
-          <li><strong>Founder Reserve:</strong> 25% (2,500,000) — locked 3 years</li>
-          <li><strong>Treasury / Future Rewards:</strong> 25% (2,500,000)</li>
-        </ul>
-        
-        <h3>Public Re-Classification Model (When Disclosed)</h3>
-        <ul>
-          <li>Public Circulation: ~20% (2M)</li>
-          <li>Team/Founder: ~30%</li>
-          <li>Contributors/Volunteers: ~5%</li>
-          <li>Partnerships/Marketing: ~15%</li>
-          <li>Treasury/Liquidity: ~20%</li>
-          <li>Community: ~10%</li>
-        </ul>
-        
-        <p>We publish the mint address, supply, and vesting/locking transactions on Solana Explorer for transparency.</p>
-      </div>
-
-      <!-- Acquisition Paths -->
-      <div class="terms-section fade-in">
-        <h2>5. Acquisition Paths</h2>
-        <ul>
-          <li><strong>Earn/Reward:</strong> Cashback, loyalty, bounties, grants, or contribution rewards recorded by XFORM.</li>
-          <li><strong>Purchase:</strong> Where enabled, users may acquire XFORM with fiat/USDC through providers we integrate.</li>
-          <li><strong>Fundraisers/Investors:</strong> Equity/convertible funding is governed by separate agreements. XFORM issued alongside such deals is a non-investment reward only.</li>
-        </ul>
-      </div>
-
-      <!-- Redemption & Use -->
-      <div class="terms-section fade-in">
-        <h2>6. Redemption & Use</h2>
-        <ul>
-          <li><strong>Platform redemption:</strong> XFORM can be used for eligible goods/services listed on the XFORM site/app. Eligible items, rates, and availability may change over time.</li>
-          <li><strong>Refunds & chargebacks:</strong> If a purchase is refunded, associated XFORM rewards may be clawed back or offset.</li>
-          <li><strong>Expiry:</strong> If we use expiry for specific reward campaigns, it will be disclosed in the offer; otherwise tokens do not expire.</li>
-        </ul>
-      </div>
-
-      <!-- Treasury Buy-Backs -->
-      <div class="terms-section fade-in">
-        <h2>7. Treasury Buy-Backs (Mechanism, Not Promise)</h2>
-        
-        <h3>Economic Intent</h3>
-        <p>As disclosed in the white paper, we target allocating ~25% of realized product profit (example split €17.5–€50 per unit under sample scenarios) to a treasury wallet (e.g., USDC on Solana) that may buy XFORM on the market and redistribute to contributors/customers.</p>
-        
-        <h3>Discretionary</h3>
-        <p>Timing, amounts, routes (buy-back, rewards, liquidity), and parameters are not guaranteed and may change with cash flow, operations, law, or governance votes.</p>
-        
-        <div class="warning-box">
-          <p><strong>No yield or return:</strong> Buy-backs are not interest, yield, or guaranteed appreciation. They are an operational policy that may be paused, reduced, or revised.</p>
-        </div>
-      </div>
-
-      <!-- Pricing & Market Rates -->
-      <div class="terms-section fade-in">
-        <h2>8. Pricing, Pegs & Market Rates</h2>
-        <ul>
-          <li>Internal rates apply to redemptions on XFORM (may differ from market price and can be adjusted).</li>
-          <li>External market price is set by the market if/when listed; we do not control or guarantee liquidity, depth, or price.</li>
-          <li>Slippage & fees on exchanges are user's responsibility.</li>
-        </ul>
-      </div>
-
-      <!-- Custody & Wallets -->
-      <div class="terms-section fade-in">
-        <h2>9. Custody & Wallets</h2>
-        
-        <h3>Personal Wallets (Recommended)</h3>
-        <p>Users may self-custody via Solana wallets (e.g., Phantom, Solflare, Ledger).</p>
-        
-        <h3>Custodial Accounts (Optional)</h3>
-        <p>For users without wallets, XFORM may provide custodial holding. Private keys are encrypted (e.g., in Google Cloud KMS). We map one on-chain account per user.</p>
-        
-        <h3>Transfers Out</h3>
-        <p>Upon KYC and security checks, we can transfer to the user's wallet. Once transferred, the user is fully responsible for safekeeping.</p>
-        
-        <h3>Operational Holds</h3>
-        <p>We may temporarily limit withdrawals/redemptions for security, compliance, or maintenance.</p>
-      </div>
-
-      <!-- KYC/AML & Eligibility -->
-      <div class="terms-section fade-in">
-        <h2>10. KYC/AML & Eligibility</h2>
-        <ul>
-          <li>We follow Netherlands/EU standards. We may require identity verification, especially ≥ €15,000 cumulative contribution per individual (or lower thresholds if mandated).</li>
-          <li>You must be legally allowed to use XFORM in your jurisdiction and not be on any sanctions list (EU/OFAC, etc.).</li>
-          <li>We may decline, suspend, or terminate access if reasonable risk/compliance concerns arise.</li>
-        </ul>
-      </div>
-
-      <!-- Taxes & Accounting -->
-      <div class="terms-section fade-in">
-        <h2>11. Taxes & Accounting (User Responsibility)</h2>
-        
-        <h3>Contributors/Team</h3>
-        <p>In NL, token income generally arises at unlock/redeemable time; initial accounting value ~$0.0001 may apply at Phase 2. Later appreciation typically falls under Box 3 (wealth), not income.</p>
-        
-        <h3>Customers</h3>
-        <p>VAT is due on redemption of XFORM for goods/services (standard 21% in NL unless otherwise applicable).</p>
-        
-        <div class="highlight-box">
-          <p><strong>Your responsibility:</strong> You must determine and pay any taxes due. XFORM may issue statements but does not provide tax advice.</p>
-        </div>
-      </div>
-
-      <!-- Regulatory Posture -->
-      <div class="terms-section fade-in">
-        <h2>12. Regulatory Posture (NL/EU)</h2>
-        
-        <h3>MiCAR (Utility)</h3>
-        <p>We classify XFORM as a utility token. Before any public sale/listing, we will prepare a MiCAR utility-token white paper and notify/coordinate with the AFM as required.</p>
-        
-        <h3>Wft Securities</h3>
-        <p>Equity/convertible fundraising is separate and handled under private-offering exemptions (e.g., ≤150 investors, ≤€5M in 12 months), governed by distinct agreements—XFORM tokens granted there are rewards only.</p>
-        
-        <h3>Wwft Custody</h3>
-        <p>Internal, limited custody is not an advertised public wallet service; should our role expand, we will obtain any needed registrations/licences.</p>
-      </div>
-
-      <!-- Prohibited Conduct -->
-      <div class="terms-section fade-in">
-        <h2>13. Prohibited Conduct</h2>
-        <p>You agree not to:</p>
-        <ul>
-          <li>Use XFORM for illegal activity, sanctions evasion, or fraud</li>
-          <li>Interfere with smart contracts, or attempt double-spends/exploits</li>
-          <li>Misrepresent affiliation with XFORM or resell custodial access as a service</li>
-        </ul>
-      </div>
-
-      <!-- Risk Notice -->
-      <div class="terms-section fade-in">
-        <h2>14. Risk Notice</h2>
-        <div class="warning-box">
-          <p><strong>Important Warning:</strong> Crypto assets can lose value rapidly. Solana network conditions (congestion, forks), program bugs, exchange failures, key loss, or regulatory changes may result in delays, loss, or illiquidity. XFORM does not guarantee price, listing, liquidity, or uninterrupted use.</p>
-        </div>
-      </div>
-
-      <!-- Disclaimers & Liability -->
-      <div class="terms-section fade-in">
-        <h2>15. Disclaimers & Liability</h2>
-        <p>To the fullest extent permitted by law:</p>
-        <ul>
-          <li>XFORM provides the token and platform "as is" without warranties.</li>
-          <li>XFORM is not liable for indirect, incidental, or consequential losses.</li>
-          <li>Aggregate liability to any user is limited to the lesser of €100 or the euros paid to XFORM for the relevant XFORM tokens (excluding market purchases from third parties).</li>
-        </ul>
-      </div>
-
-      <!-- Changes & Termination -->
-      <div class="terms-section fade-in">
-        <h2>16. Suspension, Changes & Termination</h2>
-        <p>We may modify rates, eligible items, program rules, or buy-back policies; pause functionality; or terminate accounts for compliance/security reasons. Substantial changes will be posted on our website with an effective date.</p>
-      </div>
-
-      <!-- Governing Law -->
-      <div class="terms-section fade-in">
-        <h2>17. Governing Law & Disputes</h2>
-        <p>These Terms are governed by Dutch law. Disputes are subject to the exclusive jurisdiction of the District Court of Midden-Nederland (Utrecht).</p>
-      </div>
-
-      <!-- Contact -->
-      <div class="contact-box fade-in">
-        <h2>18. Contact</h2>
-        <p><strong>XFORM Robotics</strong> — KvK [●]</p>
-        <p>Location: Houten, Netherlands</p>
-        <p>Email: <a href="mailto:legal@xform.ai">legal@xform.ai</a></p>
-        <p>Website: <a href="https://xform.ai" target="_blank">https://xform.ai</a></p>
-      </div>
-
-      <!-- Acceptance -->
-      <div class="terms-section fade-in">
-        <h2>19. Acceptance</h2>
-        <div class="highlight-box">
-          <p><strong>By acquiring, holding, or using XFORM, you confirm you have read and agree to these Terms and the White Paper (v3.1).</strong></p>
-        </div>
-      </div>
-
-      <!-- Quick Reference Table -->
-      <div class="quick-reference fade-in">
-        <h2>Quick Reference (Non-Binding Summary)</h2>
-        <table class="reference-table">
+        <table class="allocation-table">
           <thead>
             <tr>
-              <th>Topic</th>
-              <th>What to Know</th>
+              <th>Category</th>
+              <th>Tokens</th>
+              <th>% of Total</th>
+              <th>Notes</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Utility Only</strong></td>
-              <td>Not equity, not profit-sharing</td>
+              <td><strong>Public circulation (sales + cashback)</strong></td>
+              <td>20,000,000</td>
+              <td>20%</td>
+              <td>For customers and open-market users.</td>
             </tr>
             <tr>
-              <td><strong>Supply</strong></td>
-              <td>10,000,000 fixed (SPL), no remint</td>
+              <td><strong>Team & founder reserve</strong></td>
+              <td>30,000,000</td>
+              <td>30%</td>
+              <td>3- to 4-year vesting; operational funding and liquidity.</td>
             </tr>
             <tr>
-              <td><strong>Phases</strong></td>
-              <td>Build (no redemption) → Platform (internal redemption) → Public (market price)</td>
+              <td><strong>Contributors / volunteers / rewards</strong></td>
+              <td>5,000,000</td>
+              <td>5%</td>
+              <td>Task bounties and R&D incentives.</td>
             </tr>
             <tr>
-              <td><strong>Treasury</strong></td>
-              <td>Target ~25% of realized profit to treasury; buy-backs not guaranteed</td>
+              <td><strong>Partnerships / marketing</strong></td>
+              <td>15,000,000</td>
+              <td>15%</td>
+              <td>Strategic collaborations and outreach.</td>
             </tr>
             <tr>
-              <td><strong>KYC</strong></td>
-              <td>Required in certain cases (e.g., ≥ €15k)</td>
+              <td><strong>Treasury & liquidity provision</strong></td>
+              <td>20,000,000</td>
+              <td>20%</td>
+              <td>Market-making, DEX liquidity, and buy-back reserve.</td>
             </tr>
             <tr>
-              <td><strong>VAT</strong></td>
-              <td>Due on redemption of goods/services</td>
+              <td><strong>Community governance pool (optional)</strong></td>
+              <td>10,000,000</td>
+              <td>10%</td>
+              <td>DAO and governance rewards.</td>
             </tr>
-            <tr>
-              <td><strong>MiCAR</strong></td>
-              <td>White paper before any public offer/listing</td>
-            </tr>
-            <tr>
-              <td><strong>Risk</strong></td>
-              <td>No guarantee of price, liquidity, or exchange access</td>
+            <tr style="background: rgba(0, 212, 255, 0.1); font-weight: 600;">
+              <td><strong>Total supply (fixed)</strong></td>
+              <td><strong>100,000,000</strong></td>
+              <td><strong>100%</strong></td>
+              <td><strong>Hard-capped; no further minting.</strong></td>
             </tr>
           </tbody>
         </table>
+        
+        <div class="highlight-box" style="margin-top: 2rem;">
+          <p><strong>Transparency:</strong> All allocations will be visible on-chain. Smart-contract source code will be published after external security review.</p>
+        </div>
+      </div>
+
+      <!-- Proposed Economic Model -->
+      <div class="terms-section fade-in">
+        <h2>4️⃣ Proposed Economic Model</h2>
+        
+        <h3>Profit-Linked Treasury Flow</h3>
+        <p>Each product sale contributes ~20% of realised profit to the on-chain Treasury.</p>
+        <p>The Treasury swaps funds (fiat → USDC → XFORM) and redistributes tokens to contributors and customers.</p>
+        
+        <div class="highlight-box">
+          <p><strong>No new tokens are created:</strong> All redistribution occurs within the fixed 100M supply.</p>
+        </div>
+        
+        <h3>Reference Pricing</h3>
+        <ul>
+          <li><strong>Internal acceptance rate:</strong> Tokens may be used for early access of new features.</li>
+          <li><strong>Accounting value at mint:</strong> USD 0.000001 per token.</li>
+          <li><strong>Market pricing:</strong> Will be determined freely by supply and demand once trading is enabled.</li>
+        </ul>
+      </div>
+
+      <!-- Regulatory & Tax Treatment -->
+      <div class="terms-section fade-in">
+        <h2>5️⃣ Regulatory & Tax Treatment</h2>
+        
+        <table class="regulatory-table">
+          <tbody>
+            <tr>
+              <th>Aspect</th>
+              <th>Treatment (under NL / EU MiCAR)</th>
+            </tr>
+            <tr>
+              <td><strong>Token nature</strong></td>
+              <td>Utility token; access to goods and services, not profit rights.</td>
+            </tr>
+            <tr>
+              <td><strong>Fixed supply</strong></td>
+              <td>Declared in smart contract and white paper; no mint function.</td>
+            </tr>
+            <tr>
+              <td><strong>Issuer obligations</strong></td>
+              <td>Provide white paper disclosure and risk statement before public sale.</td>
+            </tr>
+            <tr>
+              <td><strong>Taxation (issuer)</strong></td>
+              <td>Income tax on actual product sales revenue only; tokens at mint ≈ zero value.</td>
+            </tr>
+            <tr>
+              <td><strong>Taxation (holders)</strong></td>
+              <td>Non taxable until tokens have market value; then as an "asset".</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Governance & Transparency -->
+      <div class="terms-section fade-in">
+        <h2>6️⃣ Governance & Transparency</h2>
+        <ul>
+          <li>Multi-signature control for Treasury and team reserves.</li>
+          <li>Vesting contracts visible on-chain (minimum 3 years).</li>
+          <li>Open-source publication of token contract and audit.</li>
+          <li>Transition to a DAO after the first full commercial year; community voting on reward percentages and liquidity releases.</li>
+        </ul>
+      </div>
+
+      <!-- Risk Disclosure -->
+      <div class="terms-section fade-in">
+        <h2>8️⃣ Risk Disclosure</h2>
+        <div class="warning-box">
+          <p><strong>Important Risk Notice:</strong> XFORM tokens have no market value, and cannot be traded publicly until explicitly allowed and communicated by XFORM Robotics.</p>
+        </div>
+        <ul>
+          <li>Tokens cannot substitute for legal tender.</li>
+          <li>Regulatory interpretations may evolve under MiCAR; the issuer will adapt filings accordingly.</li>
+          <li>Security of private wallets remains the responsibility of holders.</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact-box fade-in">
+        <h2>9️⃣ Contact</h2>
+        <p><strong>Issuer:</strong> XFORM Robotics</p>
+        <p><strong>Registered in:</strong> Netherlands</p>
+        <p><strong>Contact email:</strong> <a href="mailto:xformrobotics@gmail.com">xformrobotics@gmail.com</a></p>
+        <p><strong>Website:</strong> <a href="https://www.xformrobotics.com" target="_blank">www.xformrobotics.com</a></p>
+      </div>
+
+      <!-- Summary -->
+      <div class="summary-box fade-in">
+        <h2>✅ Summary</h2>
+        <ul>
+          <li>Fixed 100M token supply (~USD 100 nominal book value).</li>
+          <li>Utility token only – no profit rights.</li>
+          <li>Transparent on-chain accounting and multi-sig treasury.</li>
+          <li>Value driven solely by real use of XFORM products and services.</li>
+        </ul>
       </div>
 
       <!-- Back to Home -->
@@ -630,11 +623,10 @@
     
     // Track page view
     gtag('event', 'page_view', {
-      'page_title': 'XFORM Token Terms & Conditions',
+      'page_title': 'XFORM Token Official Litepaper',
       'page_location': window.location.href,
       'page_path': window.location.pathname
     });
   </script>
 </body>
 </html>
-
